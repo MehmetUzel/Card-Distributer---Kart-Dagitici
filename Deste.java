@@ -3,7 +3,7 @@ import java.util.Random;
 public class Deste {
     private Kart[] deste;
     private int anlıkkart;
-    private static final int destesayisi=2;
+    private static final int destesayisi=1;
     private static final int kart_sayisi=52*destesayisi;
     private static final Random Rastgele_Sayilar = new Random();
 

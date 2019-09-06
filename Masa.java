@@ -6,7 +6,7 @@ public class Masa {
     public static void main(String[] args){
         Deste myDeste = new Deste();
         myDeste.Kar();
-        int oyuncusayisi = 8;
+        int oyuncusayisi = 3;
 
         ArrayList<Oyuncu> myOyuncular = new ArrayList<Oyuncu>();
 
@@ -23,7 +23,8 @@ public class Masa {
         for (int k=0; k<oyuncusayisi;k++) {
             Collections.sort(myOyuncular.get(k).getEl(), new Diz());
             Collections.sort(myOyuncular.get(k).getEl(), new CesitDiz());
-            for (int l = 0; l < 13; l++) {
+            System.out.println((k+1)+" Oyuncusunun Kartları :");
+            for (int l = 0; l < myDeste.getDesteninkendi().length/oyuncusayisi; l++) {
                 System.out.println(myOyuncular.get(k).getEl().get(l));
             }
             System.out.println();
