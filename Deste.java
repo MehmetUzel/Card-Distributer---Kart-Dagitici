@@ -3,7 +3,8 @@ import java.util.Random;
 public class Deste {
     private Kart[] deste;
     private int anlıkkart;
-    private static final int kart_sayisi=52;
+    private static final int destesayisi=2;
+    private static final int kart_sayisi=52*destesayisi;
     private static final Random Rastgele_Sayilar = new Random();
 
     public Deste()
@@ -16,7 +17,7 @@ public class Deste {
         anlıkkart = 0;
 
         for (int i=0; i<deste.length;i++){
-            deste[i]=new Kart(degerler[i%13],tipler[i/13]);
+            deste[i]=new Kart(degerler[i%13],tipler[(i/13)%4]);
         }
     }
 
@@ -44,6 +45,8 @@ public class Deste {
     public Kart  getDeste(int i) {
         return deste[i];
     }
+
+    public Kart[] getDesteninkendi() {return deste;}
 
     public void setDeste(Kart[] deste) {
         this.deste = deste;

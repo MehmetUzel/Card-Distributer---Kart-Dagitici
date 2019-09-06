@@ -6,7 +6,7 @@ public class Masa {
     public static void main(String[] args){
         Deste myDeste = new Deste();
         myDeste.Kar();
-        int oyuncusayisi = 4;
+        int oyuncusayisi = 8;
 
         ArrayList<Oyuncu> myOyuncular = new ArrayList<Oyuncu>();
 
@@ -16,26 +16,8 @@ public class Masa {
            myOyuncular.add(new Oyuncu(n, new ArrayList<Kart>()));
         }
 
-        for (int i = 0 ;i <= 51 ;i++){
-
-            int a = i%4;
-            switch (a){
-                case 0 :
-                    myOyuncular.get(0).getEl().add(myDeste.getDeste(i));
-                    break;
-                case 1 :
-                    myOyuncular.get(1).getEl().add(myDeste.getDeste(i));
-                    break;
-                case 2 :
-                    myOyuncular.get(2).getEl().add(myDeste.getDeste(i));
-                    break;
-                case 3 :
-                    myOyuncular.get(3).getEl().add(myDeste.getDeste(i));
-                    break;
-            }
-//            System.out.printf("%-18s",myDeste.Kart_Dagıt());
-//                if (i%4==0)
-//                    System.out.println();
+        for (int i = 0 ;i < myDeste.getDesteninkendi().length ;i++){
+            myOyuncular.get(i%oyuncusayisi).getEl().add(myDeste.getDeste(i));
         }
 
         for (int k=0; k<oyuncusayisi;k++) {
